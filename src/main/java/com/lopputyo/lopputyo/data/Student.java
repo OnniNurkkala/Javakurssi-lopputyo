@@ -1,6 +1,8 @@
 package com.lopputyo.lopputyo.data;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private String studentFirstName;
     private String studentLastName;
     private Integer studentAge;

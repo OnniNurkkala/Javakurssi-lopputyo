@@ -1,5 +1,6 @@
 package com.lopputyo.lopputyo.service;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import com.lopputyo.lopputyo.data.OnlineCourse;
 import com.lopputyo.lopputyo.data.Student;
 
 @Service
-public class LopputyoApplicationService {
+public class LopputyoApplicationService implements Serializable {
 
     @Autowired
     FileService fileService;

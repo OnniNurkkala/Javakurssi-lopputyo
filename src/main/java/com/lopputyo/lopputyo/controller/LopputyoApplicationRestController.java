@@ -3,6 +3,7 @@ package com.lopputyo.lopputyo.controller;
 
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import com.lopputyo.lopputyo.data.OnlineCourse;
 import com.lopputyo.lopputyo.service.LopputyoApplicationService;
 
 @RestController
-public class LopputyoApplicationRestController {
+public class LopputyoApplicationRestController implements Serializable{
 
     @Autowired
     LopputyoApplicationService myLopputyoApplicationService;
