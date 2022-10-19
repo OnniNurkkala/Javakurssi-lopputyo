@@ -1,14 +1,12 @@
 package com.lopputyo.lopputyo.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Student {
     private String studentFirstName;
     private String studentLastName;
     private Integer studentAge;
     private Integer studentId;
-    public List <Student> students = new ArrayList<>();
+    //public List <Student> students = new ArrayList<>();
+
 
     private static Integer studentIdCounter = 0;
 
@@ -27,18 +25,19 @@ public class Student {
         this.studentFirstName = s.studentFirstName;
         this.studentLastName = s.studentLastName;
         this.studentAge = s.studentAge;
-        //this.studentId = studentIdCounter++;
+        s.studentId = s.studentId+1;
 
-   
-        //new Student(s);
-        //students.add(s);
+
+        //this.students.add(s);
     }
 
+    
+    /*public void setStudents(List<Student> students) {
+        this.students = students;
+    }
     public List<Student> getStudents(){
         return this.students;
-    }
-
-
+    }*/
     public String getStudentFirstName() {
         return this.studentFirstName;
     }
