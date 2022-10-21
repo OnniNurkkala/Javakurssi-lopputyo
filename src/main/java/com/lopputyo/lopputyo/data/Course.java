@@ -1,11 +1,16 @@
 package com.lopputyo.lopputyo.data;
 
 public class Course {
+    // Variables
     protected String courseName;
     protected String courseTeacher;
-    //protected int courseId;
     protected String courseLenght;
 
+
+    // Constructros
+    public Course() {
+
+    }
 
     public Course(String courseName, String courseTeacher, String courseLenght) {
         this.courseName = courseName;
@@ -13,7 +18,7 @@ public class Course {
         this.courseLenght = courseLenght;
     }
 
-
+    // Getters and setters
     public String getCourseName() {
         return this.courseName;
     }
@@ -29,14 +34,6 @@ public class Course {
     public void setCourseTeacher(String courseTeacher) {
         this.courseTeacher = courseTeacher;
     }
-
-    /*public int getCourseId() {
-        return this.courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }*/
 
     public String getCourseLenght() {
         return this.courseLenght;

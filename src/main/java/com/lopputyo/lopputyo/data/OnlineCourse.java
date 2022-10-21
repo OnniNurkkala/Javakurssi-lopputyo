@@ -1,15 +1,25 @@
 package com.lopputyo.lopputyo.data;
 
+import java.io.Serializable;
 
-public class OnlineCourse extends Course{
+// OnlineCourse inherits course
+public class OnlineCourse extends Course implements Serializable {
+    // Unique variable to OnlineCourse
     private String courseJoinId;
 
-    public OnlineCourse(String courseJoinId,String courseName, String courseTeacher, String courseLenght) {
+    // Constructros
+    public OnlineCourse() {
+        super();
+    }
+
+    public OnlineCourse(String courseJoinId, String courseName, String courseTeacher, String courseLenght) {
         super(courseName, courseTeacher, courseLenght);
         this.courseJoinId = courseJoinId;
     }
 
-    public void setOnlineCourseInfo(OnlineCourse oc){
+    // Getters and setters
+    // Set a OnlineCourse when the parameter is an object
+    public void setOnlineCourseInfo(OnlineCourse oc) {
         new OnlineCourse(oc.courseJoinId, oc.courseName, oc.courseTeacher, oc.courseLenght);
     }
 
@@ -21,5 +31,8 @@ public class OnlineCourse extends Course{
         this.courseJoinId = courseJoinId;
     }
 
+    public String getOnlineCourseName() {
+        return super.getCourseName();
+    }
 
 }
