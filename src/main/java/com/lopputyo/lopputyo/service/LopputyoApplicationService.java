@@ -45,6 +45,28 @@ public class LopputyoApplicationService implements Serializable {
         return oc;
     }
 
+
+    //public List<Student> TEMPcourseStudents = new ArrayList<>();
+    
+    public List<Student> getOnlineCourseStudents(String courseId){
+        List<Student> TEMPcourseStudents = new ArrayList<>();
+
+        for (Student student : students) {
+            if (student.getStudentId().equals(courseId)) {
+                TEMPcourseStudents.add(student);
+            }
+        }
+        List<Student> courseStudents = new ArrayList<Student>(TEMPcourseStudents);
+
+        TEMPcourseStudents.clear();
+
+        return courseStudents;
+    }
+
+
+
+
+
 // ClassRoomCourse
     // Functionality of the ClassRoomCourse is the same as the OnlineCourse
     public List<ClassRoomCourse> classRoomCourses = new ArrayList<>();

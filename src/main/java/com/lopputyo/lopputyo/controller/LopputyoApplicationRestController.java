@@ -29,8 +29,9 @@ public class LopputyoApplicationRestController implements Serializable {
             @RequestParam String courseJoinId,
             @RequestParam String courseName,
             @RequestParam String courseTeacher,
-            @RequestParam String courseLenght) {
-        OnlineCourse oc = new OnlineCourse(courseJoinId, courseName, courseTeacher, courseLenght);
+            @RequestParam String courseLenght,
+            @RequestParam String courseId ) {
+        OnlineCourse oc = new OnlineCourse(courseJoinId, courseName, courseTeacher, courseLenght, courseId);
         myLopputyoApplicationService.addOnlineCourse(oc);
         return oc;
     }
@@ -46,14 +47,21 @@ public class LopputyoApplicationRestController implements Serializable {
         return myLopputyoApplicationService.getOnlineCourseByName(courseName);
     }
 
+    @GetMapping("getOnlineCourseStudents")
+    public List<Student>getOnlineCourseStudents(
+        @RequestParam String courseId){
+        return myLopputyoApplicationService.getOnlineCourseStudents(courseId);
+    }
+
 // ClassRoomCourse mappings
     @PostMapping("addClassRoomCourse")
     public Course addClassRoomCourse(
             @RequestParam String classRoomId,
             @RequestParam String courseName,
             @RequestParam String courseTeacher,
-            @RequestParam String courseLenght) {
-        ClassRoomCourse crc = new ClassRoomCourse(classRoomId, courseName, courseTeacher, courseLenght);
+            @RequestParam String courseLenght,
+            @RequestParam String courseId) {
+        ClassRoomCourse crc = new ClassRoomCourse(classRoomId, courseName, courseTeacher, courseLenght ,courseId);
         myLopputyoApplicationService.addClassRoomCourse(crc);
         return crc;
     }
@@ -74,9 +82,9 @@ public class LopputyoApplicationRestController implements Serializable {
     public Student addStudent(
             @RequestParam String fname,
             @RequestParam String lname,
-            @RequestParam Integer age) {
-
-        Student s = new Student(fname, lname, age);
+            @RequestParam Integer age,
+            @RequestParam String studentId ) {
+        Student s = new Student(fname, lname, age,studentId);
         myLopputyoApplicationService.addStudent(s);
         return s;
     }

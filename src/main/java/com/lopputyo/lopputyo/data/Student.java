@@ -7,18 +7,21 @@ public class Student implements Serializable {
     private String studentFirstName;
     private String studentLastName;
     private Integer studentAge;
-    private Integer studentId;
-    private static Integer studentIdCounter = 0;
+    private Integer studentNumber;
+    private String studentId;
+    private static Integer studentNumberCounter = 0;
+
 
     // Constructros
     public Student() {
     }
 
-    public Student(String studentFirstName, String studentLastName, Integer studentAge) {
+    public Student(String studentFirstName, String studentLastName, Integer studentAge, String studentId) {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
         this.studentAge = studentAge;
-        this.studentId = studentIdCounter++; // idCounter adds to the studentId
+        this.studentId = studentId;
+        this.studentNumber = studentNumberCounter++; // NumberCounter adds to the studentNumber
     }
 
     // Getters and setters
@@ -27,7 +30,8 @@ public class Student implements Serializable {
         this.studentFirstName = s.studentFirstName;
         this.studentLastName = s.studentLastName;
         this.studentAge = s.studentAge;
-        s.studentId = s.studentId + 1;
+        this.studentId = s.studentId;
+        s.studentNumber = s.studentNumber + 1;
     }
 
 
@@ -55,11 +59,20 @@ public class Student implements Serializable {
         this.studentAge = studentAge;
     }
 
-    public Integer getStudentId() {
+    public Integer getStudentNumber() {
+        return this.studentNumber;
+    }
+
+    public void setStudentNumber(Integer studentNumber) {
+        this.studentNumber = studentNumber;
+    }
+
+    public String getStudentId() {
         return this.studentId;
     }
 
-    public void setStudentId(Integer studentId) {
+    public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
+    
 }

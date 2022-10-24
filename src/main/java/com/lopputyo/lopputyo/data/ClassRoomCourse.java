@@ -10,15 +10,15 @@ public class ClassRoomCourse extends Course {
         super();
     }
 
-    public ClassRoomCourse(String classRoomId, String courseName, String courseTeacher, String courseLenght) {
-        super(courseName, courseTeacher, courseLenght);
+    public ClassRoomCourse(String classRoomId, String courseName, String courseTeacher, String courseLenght, String courseId) {
+        super(courseName, courseTeacher, courseLenght,courseId);
         this.classRoomId = classRoomId;
     }
 
     // Getters and setters
     // Set a ClassRoomCourse when the parameter is an object
     public void setClassRoomCourseInfo(ClassRoomCourse crc) {
-        new ClassRoomCourse(crc.classRoomId, crc.courseName, crc.courseTeacher, crc.courseLenght);
+        new ClassRoomCourse(crc.classRoomId, crc.courseName, crc.courseTeacher, crc.courseLenght, crc.courseId);
     }
 
     public String getClassRoom() {

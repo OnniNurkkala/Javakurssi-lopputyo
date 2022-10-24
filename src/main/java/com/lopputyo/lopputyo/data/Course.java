@@ -5,20 +5,30 @@ public class Course {
     protected String courseName;
     protected String courseTeacher;
     protected String courseLenght;
+    protected String courseId;
 
 
     // Constructros
     public Course() {
-
     }
 
-    public Course(String courseName, String courseTeacher, String courseLenght) {
+    public Course(String courseName, String courseTeacher, String courseLenght, String courseId) {
         this.courseName = courseName;
         this.courseTeacher = courseTeacher;
         this.courseLenght = courseLenght;
+        this.courseId = courseId;
     }
 
+
     // Getters and setters
+    public String getCourseId() {
+        return this.courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
     public String getCourseName() {
         return this.courseName;
     }
