@@ -3,7 +3,7 @@ package com.lopputyo.lopputyo.data;
 import java.io.Serializable;
 
 public class Student implements Serializable {
-    // Variables
+// Variables
     private String studentFirstName;
     private String studentLastName;
     private Integer studentAge;
@@ -12,7 +12,7 @@ public class Student implements Serializable {
     private static Integer studentNumberCounter = 0;
 
 
-    // Constructros
+// Constructors
     public Student() {
     }
 
@@ -24,7 +24,7 @@ public class Student implements Serializable {
         this.studentNumber = studentNumberCounter++; // NumberCounter adds to the studentNumber
     }
 
-    // Getters and setters
+// Getters and setters
     // Set a student when the parameter is an object
     public void setStudentInfo(Student s) { 
         this.studentFirstName = s.studentFirstName;

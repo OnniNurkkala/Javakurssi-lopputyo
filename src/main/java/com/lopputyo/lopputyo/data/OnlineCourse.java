@@ -7,17 +7,18 @@ public class OnlineCourse extends Course implements Serializable {
     // Unique variable to OnlineCourse
     private String courseJoinId;
 
-    // Constructros
+// Constructors
     public OnlineCourse() {
         super();
     }
 
-    public OnlineCourse(String courseJoinId, String courseName, String courseTeacher, String courseLenght, String courseId) {
-        super(courseName, courseTeacher, courseLenght,courseId);
+    public OnlineCourse(String courseJoinId, String courseName, String courseTeacher, String courseLenght,
+            String courseId) {
+        super(courseName, courseTeacher, courseLenght, courseId);
         this.courseJoinId = courseJoinId;
     }
 
-    // Getters and setters
+// Getters and setters
     // Set a OnlineCourse when the parameter is an object
     public void setOnlineCourseInfo(OnlineCourse oc) {
         new OnlineCourse(oc.courseJoinId, oc.courseName, oc.courseTeacher, oc.courseLenght, oc.courseId);
