@@ -32,6 +32,7 @@ public class LopputyoApplicationRestController implements Serializable {
     }
 
 // OnlineCourse mappings
+    //add online course
     @PostMapping("addonlinecourse")
     public Course addOnlineCourse(
             @RequestParam String courseJoinId,
@@ -44,11 +45,13 @@ public class LopputyoApplicationRestController implements Serializable {
         return oc;
     }
 
+    // get all online courses
     @GetMapping("getonlinecourse")
     public List<OnlineCourse> getOnlineCourse() {
         return myLopputyoApplicationService.getOnlineCourse();
     }
 
+    // get online course by it's name
     @GetMapping("getonlinecoursebyname")
     public OnlineCourse getOnlineCourseByName(
             @RequestParam String courseName) {
@@ -56,6 +59,7 @@ public class LopputyoApplicationRestController implements Serializable {
     }
 
 // ClassRoomCourse mappings
+    //add classroom course 
     @PostMapping("addclassroomcourse")
     public Course addClassRoomCourse(
             @RequestParam String classRoomId,
@@ -68,11 +72,13 @@ public class LopputyoApplicationRestController implements Serializable {
         return crc;
     }
 
+    //get all class room courses
     @GetMapping("getclassroomcourse")
     public List<ClassRoomCourse> getClassRoomCourse() {
         return myLopputyoApplicationService.getClassRoomCourse();
     }
 
+    //get class room course by it's name 
     @GetMapping("getclassroomcoursebyname")
     public ClassRoomCourse getClassRoomCourseByName(
             @RequestParam String courseName) {
@@ -80,6 +86,7 @@ public class LopputyoApplicationRestController implements Serializable {
     }
 
 // Student mappings
+    //add student
     @PostMapping("addstudent")
     public Student addStudent(
             @RequestParam String fname,
@@ -91,11 +98,13 @@ public class LopputyoApplicationRestController implements Serializable {
         return s;
     }
 
+    //get all students
     @GetMapping("getstudents")
     public List<Student> getStudents() {
         return myLopputyoApplicationService.getStudents();
     }
-
+ 
+    // get student by first and last name
     @GetMapping("getstudentbyname")
     public Student getStudentByName(
             @RequestParam String fname,
@@ -103,11 +112,13 @@ public class LopputyoApplicationRestController implements Serializable {
         return myLopputyoApplicationService.getStudentByName(fname, lname);
     }
 
+    // add currently created students to a file
     @PostMapping("addstudentsfile")
     public void addStudentsFile() throws IOException {
         myLopputyoApplicationService.addStudentFileInfo();
     }
 
+    // get students from a file
     @GetMapping("getstudentsfile")
     public List<Student> getStudentsFile() throws IOException, ClassNotFoundException {
         return myLopputyoApplicationService.getStudentsFileInfo();
